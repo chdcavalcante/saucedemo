@@ -8,17 +8,14 @@ Feature: Login
   Background:
     Given esteja na pagina de login
 		
-		@positivo
     Scenario: login com sucesso
-      When informo login "standard_user"
-      And informo senha "secret_sauce"
-      And clico em login
+      When informo dados de login "standard_user" "secret_sauce"
+      When clico em login
       Then login realizado com sucesso
 	
-	@negativos
   Scenario Outline: login com dados invalidos
     When informo login <login>
-    And informo senha <senha>
+    When informo senha <senha> 
     And clico em login
     Then obtenho <msg>
 

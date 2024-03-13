@@ -3,17 +3,17 @@ package projeto.saucedemo.pages;
 import projeto.saucedemo.core.BasePage;
 
 public class LoginPages extends BasePage {
-
-    public void setUsername(String texto){
-        dsl.escrever("user-name", texto);
+    
+    public void setLogin(String login) {
+    	dsl.escrever("user-name", login);
     }
-
-    public void setPassword(String texto){
-        dsl.escrever("password", texto);
+    
+    public void setPassword(String password) {
+    	dsl.escrever("password", password);
     }
-
-    public void clickLogin(){
-        dsl.clicar("login-button");
+    
+    
+    public void clicarLogin() {
+    	dsl.clicar("login-button");
     }
-
 }
