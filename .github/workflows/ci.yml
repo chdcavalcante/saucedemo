@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    container:
+      image: 'node:20'
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -21,6 +24,3 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '11'
-
-    - name: Build with Maven
-      run: mvn -B
