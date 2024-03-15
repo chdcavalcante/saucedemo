@@ -5,6 +5,7 @@ import static projeto.saucedemo.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,10 +16,15 @@ public class LoginSteps {
 
 	private LoginPages page;
 
+	@Before
+	public void inicializa() {
+		page = new LoginPages();
+	}
+
 	@Given("esteja na pagina de login")
 	public void esteja_na_pagina_de_login() {
 		getDriver().get("https://www.saucedemo.com/");
-		page = new LoginPages();
+
 	}
 
 	@When("informo dados de login {string} {string}")
@@ -53,6 +59,7 @@ public class LoginSteps {
 				.getText();
 
 		assertEquals(string, msgRetorno);
+
 	}
 
 }

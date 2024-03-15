@@ -3,14 +3,10 @@ package projeto.saucedemo.steps;
 import static org.junit.Assert.assertEquals;
 import static projeto.saucedemo.core.DriverFactory.getDriver;
 
-import org.openqa.selenium.By;
-
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import projeto.saucedemo.core.DriverFactory;
 import projeto.saucedemo.pages.AdicionarItensAoCarrinhoPages;
 import projeto.saucedemo.pages.LoginPages;
 
@@ -19,22 +15,17 @@ public class AdicionarItensAoCarrinhoSteps {
 	private LoginPages loginPage;
 	private AdicionarItensAoCarrinhoPages addPage;
 
-
 	@Before
 	public void inicia() {
-		loginPage = new LoginPages();		
+		loginPage = new LoginPages();
 		addPage = new AdicionarItensAoCarrinhoPages();
-	}
-	
-	@After
-	public void finaliza() {
-		DriverFactory.killDriver();
+
 	}
 
 	@Given("Dado que acessei o site")
 	public void dado_que_acessei_o_site() {
 		getDriver().get("https://www.saucedemo.com/");
-		
+
 	}
 
 	@When("realizar login com dados validos")

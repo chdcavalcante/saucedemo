@@ -31,5 +31,10 @@
 			<artifactId>cucumber-core</artifactId>
 			<version>7.15.0</version>
 		</dependency>
+		<dependency>
+			<groupId>br.com.e2etreinamentos</groupId>
+			<artifactId>DesafiosE2E</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

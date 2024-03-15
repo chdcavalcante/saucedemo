@@ -6,7 +6,6 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import projeto.saucedemo.core.DSL;
-import projeto.saucedemo.core.DriverFactory;
 import projeto.saucedemo.pages.AdicionarItensAoCarrinhoPages;
 import projeto.saucedemo.pages.menuHambPages;
 
@@ -18,7 +17,7 @@ public class menuHambSteps {
 
 	@Before
 	public void inicializa() {
-		dsl = new DSL();
+
 		page = new menuHambPages();
 		addPage = new AdicionarItensAoCarrinhoPages();
 	}
@@ -32,7 +31,7 @@ public class menuHambSteps {
 	public void clico_no_menu_hambuguer() throws InterruptedException {
 		page.clickMenuHamb();
 		Thread.sleep(500);
-		
+
 	}
 
 	@When("clico em All items")

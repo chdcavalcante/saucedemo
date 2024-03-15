@@ -1,27 +1,24 @@
 package projeto.saucedemo.steps;
 
 import static org.junit.Assert.assertEquals;
-import static projeto.saucedemo.core.DriverFactory.getDriver;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import projeto.saucedemo.core.DriverFactory;
 import projeto.saucedemo.pages.AdicionarItensAoCarrinhoPages;
 import projeto.saucedemo.pages.realizarPedidoPages;
 
-public class realizarPedidoSteps {
+public class realizarPedidoSteps  {
 
 	private realizarPedidoPages page;
 	private AdicionarItensAoCarrinhoPages addPage;
 
 	@Before
 	public void inicializa() {
+
 		page = new realizarPedidoPages();
 		addPage = new AdicionarItensAoCarrinhoPages();
+
 	}
 
 	@When("adiciono item desejado")
@@ -61,10 +58,10 @@ public class realizarPedidoSteps {
 	public void pedido_finalizado() {
 		assertEquals("Thank you for your order!", page.confirmacaoPedido());
 	}
-	
+
 	@When("informa firstName {string}, {string}, {string}")
 	public void informa_first_name(String firstName, String lastName, String cep) {
-	    page.setDadosObrigatorios(firstName, lastName, cep);
+		page.setDadosObrigatorios(firstName, lastName, cep);
 	}
 
 	@Then("mensagem {string}")
